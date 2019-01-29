@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      QR Code Scanner
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-item>
+        <ion-button expand="block" (click)="scanQRCode()"> Scan QR Code </ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Scanned Code : {{scanQRCode}}
+      </ion-label>
+    </ion-item>
+</ion-content>
