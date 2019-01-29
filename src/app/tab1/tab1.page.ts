@@ -6,7 +6,7 @@ import { Stripe, StripeCardTokenParams } from '@ionic-native/stripe/ngx';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
   cardNumber: string;
   expiryMonth: number;
   expiryYear: number;
@@ -18,7 +18,7 @@ export class Tab1Page {
     cvc: ''
   };
     constructor(private stripe: Stripe) {
-      console.log("constructor");
+      console.log('constructor');
     }
 
     ngOnInit(){
@@ -36,6 +36,14 @@ export class Tab1Page {
       console.log(err);
     });
 
+  }
+
+  validateCardNumber() {
+    this.stripe.validateCardNumber(this.card.number).then(data => {
+      console.log('Validated', data);
+    }).catch(error => {
+      console.log('Error in validation', error);
+    });
   }
 
 }
