@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Payment Using Stripe
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+      <ion-label> Card Number </ion-label>
+      <ion-input [(ngModel)]="cardNumber"> </ion-input>
+  </ion-item>
+  
+  <ion-item>
+      <ion-label> Expiry Month </ion-label>
+      <ion-input [(ngModel)]="expiryMonth"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label> Expiry Year </ion-label>
+      <ion-input [(ngModel)]="expiryYear"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label> cvv </ion-label>
+      <ion-input [(ngModel)]="cvv"> </ion-input>    
+  </ion-item>
+  
+  <ion-item>
+      <ion-button expand="block" (click)="createCard()"> Create Token </ion-button>
+  </ion-item>
+
+</ion-content>
