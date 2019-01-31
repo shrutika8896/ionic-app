@@ -9,6 +9,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Stripe } from '@ionic-native/stripe/ngx';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
+import {ToastMessageService } from './toast-message.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +20,9 @@ import { Stripe } from '@ionic-native/stripe/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Stripe
+    Stripe,
+    QRScanner,
+    ToastMessageService
   ],
   bootstrap: [AppComponent]
 })
